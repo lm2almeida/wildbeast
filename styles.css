@@ -33,8 +33,43 @@ li, ol {
   grid-template-columns: minmax(16rem, 1fr) 3fr 30rem;
 }
 
+/* Header */
 .header {
+  background: linear-gradient(135deg, #8844EE, #B07DFB);
   grid-area: header;
+  padding: 3rem;
+
+  /* inner grid */
+  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr auto;
+}
+
+.logo {
+  max-width: 20rem;
+}
+
+.header__nav ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.header__nav-item + .header__nav-item {
+  margin-left: 3rem;
+}
+
+.header__nav-item a {
+  background: rgba(0, 0, 0, .1);
+  border-radius: 5px;
+  color: #FFF;
+  display: block;
+  font-size: 1.8rem;
+  padding: 1rem;
+  transition: background 0.1s;
+}
+
+.header__nav-item a:hover {
+  background: rgba(0, 0, 0, .5);
 }
 
 .sidenav {
