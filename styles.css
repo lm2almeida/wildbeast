@@ -1,0 +1,23 @@
+/* Reset */
+*, *::after, *::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: "Vollkorn", "Georgia", serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+li, ol {
+  list-style: none;
+}
