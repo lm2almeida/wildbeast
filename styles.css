@@ -69,11 +69,30 @@ li, ol {
 }
 
 .header__nav-item a:hover {
-  background: rgba(0, 0, 0, .5);
+  background: rgba(0, 0, 0, 0.5);
 }
 
+/* Sidenav */
 .sidenav {
+  background: #FAFBFC;
   grid-area: sidenav;
+  padding: 3rem;
+}
+
+.sidenav-item a {
+  background: #FFF;
+  border-radius: 5px;
+  box-shadow: 5px 5px 15px 0px rgba(4, 4, 4, 0.15);
+  display: block;
+  margin: 0 auto 3rem auto;
+  min-width: 6rem;
+  max-width: 14rem;
+  padding: 2rem;
+  transition: background 0.1s ease-out;
+}
+
+.sidenav-item a:hover {
+  background: #B07DFB;
 }
 
 .content {
