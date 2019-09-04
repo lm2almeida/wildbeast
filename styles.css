@@ -21,3 +21,34 @@ a {
 li, ol {
   list-style: none;
 }
+
+/* Grid configs */
+.container {
+  display: grid;
+  grid-template-areas:
+    "header header header"
+    "sidenav content advertising"
+    "footer footer footer"
+  ;
+  grid-template-columns: minmax(16rem, 1fr) 3fr 30rem;
+}
+
+.header {
+  grid-area: header;
+}
+
+.sidenav {
+  grid-area: sidenav;
+}
+
+.content {
+  grid-area: content;
+}
+
+.advertising {
+  grid-area: advertising;
+}
+
+.footer {
+  grid-area: footer;
+}
