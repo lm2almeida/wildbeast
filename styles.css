@@ -22,6 +22,12 @@ li, ol {
   list-style: none;
 }
 
+img {
+  border-radius: 5px;
+  display: block;
+  max-width: 100%;
+}
+
 /* Grid configs */
 .container {
   display: grid;
@@ -99,10 +105,27 @@ li, ol {
   grid-area: content;
 }
 
+/* Advertising */
 .advertising {
+  background: #FAFBFC;
   grid-area: advertising;
+  padding: 3rem;
+
+  /* inner grid */
+  align-content: start;
+  display: grid;
+  grid-gap: 3rem;
 }
 
+/* Footer */
 .footer {
+  background: linear-gradient(135deg, #8844EE, #B07DFB);
   grid-area: footer;
+}
+
+.footer p {
+  color: #FFF;
+  font-size: 1.9rem;
+  padding: 3rem;
+  text-align: center;
 }
