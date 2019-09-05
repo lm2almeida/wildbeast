@@ -41,6 +41,30 @@ img {
   grid-template-columns: minmax(16rem, 1fr) 3fr 30rem;
 }
 
+@media only screen and (max-width: 1200px) {
+  .container {
+    grid-template-areas: 
+      "header header header"
+      "sidenav content content"
+      "sidenav advertising advertising"
+      "footer footer footer"
+    ;
+  }
+}
+
+@media only screen and (max-width: 760px) {
+  .container {
+    grid-template-columns: 100%;
+    grid-template-areas: 
+      "header"
+      "sidenav"
+      "content"
+      "advertising"
+      "footer"
+    ;
+  }
+}
+
 /* Utils */
 .col-wide {
   grid-column: 1 / -1;
@@ -85,6 +109,24 @@ img {
   background: rgba(0, 0, 0, 0.5);
 }
 
+@media only screen and (max-width: 760px) {
+  .header {
+    grid-template-columns: auto;
+  }
+
+  .logo {
+    margin-bottom: 2rem;
+  }
+
+  .header__nav-item a {
+    foont-size: 1.6rem;
+  }
+
+  .header__nav-item + .header__nav-item {
+    margin-left: 1rem;
+  }
+}
+
 /* Sidenav */
 .sidenav {
   background: #FAFBFC;
@@ -106,6 +148,50 @@ img {
 
 .sidenav-item a:hover {
   background: #B07DFB;
+}
+
+@media only screen and (max-width: 760px) {
+  .sidenav {
+    box-sizing: content-box;
+    padding: 0 3rem;
+    position: relative;
+
+    /* scroll */
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+  }
+
+  .sidenav::after {
+    animation: arrowShaking 0.3s ease-in infinite alternate;
+    color: rgba(0, 0, 0, 0.3);
+    content: "→";
+    position: absolute;
+    right: 3rem;
+    top: 5px;
+  }
+
+  @keyframes arrowShaking {
+    from {
+      right: 3rem;
+    }
+
+    to {
+      right: 2rem;
+    }
+  }
+
+  .sidenav ul {
+    display: flex;
+  }
+
+  .sidenav-item {
+    flex: 1 0 6rem;
+  }
+
+  .sidenav-item a {
+    margin: 3rem 3rem 3rem 0;
+  }
 }
 
 /* Content */
@@ -146,6 +232,12 @@ img {
   color: #B07DFB;
   font-size: 1.4rem;
   max-width: 26rem;
+}
+
+@media only screen and (max-width: 600px) {
+  .content {
+    grid-template-columns: 100%;
+  }
 }
 
 /* Infos */
@@ -206,6 +298,12 @@ img {
   align-self: end;
 }
 
+@media only screen and (max-width: 600px) {
+  .general {
+    grid-template-columns: 100%;
+  }
+}
+
 .quote,
 .attributes__list {
   align-self: start;
@@ -244,10 +342,17 @@ img {
   border-top: 2px solid #B07DFB;
 }
 
+@media only screen and (max-width: 600px) {
+  .attributes {
+    grid-template-columns: 100%;
+  }
+}
+
 /* Advertising */
 .advertising {
   background: #FAFBFC;
   grid-area: advertising;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   padding: 3rem;
 
   /* inner grid */
